@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel The Future - UNOH Student Pitch Competition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #8B1538 0%, #6B0F2A 100%);
+            color: white;
+            padding: 20px 20px;
+            text-align: center;
+            font-size: 3em;
+        }
+
+        .hero h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .prize {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-top: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            color: #8B1538;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #8B1538;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item .date {
+            color: #8B1538;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item .event {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .info-card h3 {
+            color: #8B1538;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .info-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #8B1538;
+            font-weight: bold;
+        }
+
+        .criteria {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .criteria h3 {
+            color: #8B1538;
+            margin-bottom: 20px;
+        }
+
+        .criteria-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .criteria-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #8B1538;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #8B1538 0%, #6B0F2A 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .important-note {
+            background: #efefef;
+            border: 2px solid #000000;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .important-note h3 {
+            color: #00000;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .tagline {
+                font-size: 1.2em;
+            }
+
+            .prize {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div align="center"><img src="fuel the future logo-01.png" width="600"></div>
+    <div class="hero">Win $500 Grant for Your Startup!</div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Turn Your Idea Into Reality</h2>
+            <p style="text-align: center; font-size: 1.2em; color: #555; max-width: 800px; margin: 0 auto;">
+                Do you have a business idea you want to see come alive? Join fellow UNOH students in pitching your startup concept 
+                to faculty, alumni entrepreneurs, and local business leaders. The winning team receives a $500 grant to launch their business!
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Important Dates</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">February 1, 2026</div>
+                    <div class="event">Application Deadline - Submit your team's application</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">February 16, 2026</div>
+                    <div class="event">Team Selection - Selected teams will be notified</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">February 27, 2026</div>
+                    <div class="event">Slide Submission - Submit your presentation slides for review</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">March 6, 2026 (~11:00 AM)</div>
+                    <div class="event">Competition Day - Present your 10-minute pitch (in-person or remote)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Competition Details</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Eligibility</h3>
+                    <ul>
+                        <li>All team members must be enrolled at UNOH</li>
+                        <li>Students must be in good standing (2.0+ GPA, no holds or disciplinary actions)</li>
+                        <li>Teams of 1-4 students</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Presentation Format</h3>
+                    <ul>
+                        <li>10-minute maximum pitch</li>
+                        <li>Present in-person or remotely</li>
+                        <li>Slides required for review</li>
+                        <li>Judged on established criteria</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>The Judges</h3>
+                    <ul>
+                        <li>UNOH faculty members</li>
+                        <li>Alumni award winners</li>
+                        <li>Local business leaders</li>
+                        <li>Independent & impartial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="criteria">
+                <h3>What Should Your Application Include?</h3>
+                <div class="criteria-list">
+                    <div class="criteria-item">
+                        <strong>Your Elevator Pitch</strong><br>
+                        Describe your business in 1-2 compelling sentences
+                    </div>
+                    <div class="criteria-item">
+                        <strong>Problem & Solution</strong><br>
+                        What problem are you solving and why does it matter?
+                    </div>
+                    <div class="criteria-item">
+                        <strong>Target Customers</strong><br>
+                        Who will benefit from your product or service?
+                    </div>
+                    <div class="criteria-item">
+                        <strong>Market Research</strong><br>
+                        What have you learned from customers or research?
+                    </div>
+                    <div class="criteria-item">
+                        <strong>Impact Vision</strong><br>
+                        How will your idea change your community or industry?
+                    </div>
+                    <div class="criteria-item">
+                        <strong>Fund Usage Plan</strong><br>
+                        How will you use the $500 grant if you win?
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <h3>Important Information</h3>
+            <p><strong>Financial Aid:</strong> The grant may affect your financial aid. Contact the Financial Aid Office before accepting any prize.</p>
+            <p><strong>Tax Implications:</strong> Winners must complete a W9 form as the prize is considered taxable income.</p>
+            <p><strong>Confidentiality:</strong> You are responsible for protecting your proprietary ideas. UNOH takes no responsibility for unwanted disclosure.</p>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Launch Your Startup?</h2>
+            <p style="font-size: 1.2em; margin-bottom: 30px;">
+                Don't miss this opportunity to get funding, mentorship, and exposure for your business idea!
+            </p>
+            <a href="#apply" class="cta-button">Apply Now - Deadline February 1st</a>
+            <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.9;">
+                Questions? Contact your team lead or the competition organizers at UNOH
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 University of Northwestern Ohio - Fuel The Future Student Pitch Competition</p>
+        <p style="margin-top: 10px; opacity: 0.8;">All decisions made by judges are final. Scoring is confidential.</p>
+    </footer>
+</body>
+</html>
